@@ -1,6 +1,12 @@
 <h1>Character Search</h1>
-<p><h2>There are <%= @count %> members of <%= params[:nation] %>.</h2></p>
-<p><h2><%= params[:nation] %> Members: </h2></p>
+<p><h2>There are <%= @count %> members of <%= @nation %>.</h2></p>
+<p><h2><%= @nation %> Members: </h2></p>
 <% @characters.each do |character| %>
-<%= character.name %>
+<%= character.name %><br>
+<%= "Allies: #{character.allies}" %><br>
+<%= "Enemies: #{character.enemies}" %><br>
+<%= "Affiliation: #{character.affiliation}" %><br>
+  <% if character.photo_url %>
+    <img src="<%character.photo_url%>">
+  <% end %><br>
 <% end %>
