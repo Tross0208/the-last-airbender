@@ -1,6 +1,6 @@
 class SearchService
   def self.get_people_by_nation(nation)
-    response = conn.get("/api/v1/characters?affiliation=#{nation}")
+    response = conn.get("/api/v1/characters?affiliation=#{nation}&perPage=200")
     get_json(response)
   end
 
